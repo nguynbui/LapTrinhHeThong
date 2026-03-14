@@ -1,0 +1,18 @@
+{
+  "Items": [
+    {
+      "ItemID": "9a59ea90-942e-484d-9b71-d00ab607e03b",
+      "Code": "Merino-2011-LG",
+      "Description": "2011 Merino Sweater - LARGE",
+      "UpdatedDateUTC": "\/Date(1488338552390+0000)\/",
+      "PurchaseDetails": {
+        "UnitPrice": 149.0000,
+        "AccountCode": "300"
+      },
+      "SalesDetails": {
+        "UnitPrice": 299.0000,
+        "AccountCode": "200"
+      }
+    }
+  ]
+}

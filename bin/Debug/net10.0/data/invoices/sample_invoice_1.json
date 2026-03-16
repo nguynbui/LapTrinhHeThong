@@ -1,0 +1,5 @@
+[
+  { "invoiceId": "I1", "productId": "P1", "quantity": 10, "unitPrice": 8.0, "invoiceDate": "2026-03-10T00:00:00Z" },
+  { "invoiceId": "I2", "productId": "P2", "quantity": 60, "unitPrice": 15.0, "invoiceDate": "2026-03-11T00:00:00Z" },
+  { "invoiceId": "I3", "productId": "P1", "quantity": 5, "unitPrice": 8.0, "invoiceDate": "2026-03-12T00:00:00Z" }
+]

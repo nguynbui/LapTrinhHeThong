@@ -1,0 +1,14 @@
+D:\FINAL LTHT\bin\Debug\net10.0\FINAL LTHT.exe
+D:\FINAL LTHT\bin\Debug\net10.0\FINAL LTHT.deps.json
+D:\FINAL LTHT\bin\Debug\net10.0\FINAL LTHT.runtimeconfig.json
+D:\FINAL LTHT\bin\Debug\net10.0\FINAL LTHT.dll
+D:\FINAL LTHT\bin\Debug\net10.0\FINAL LTHT.pdb
+D:\FINAL LTHT\obj\Debug\net10.0\FINAL LTHT.GeneratedMSBuildEditorConfig.editorconfig
+D:\FINAL LTHT\obj\Debug\net10.0\FINAL LTHT.AssemblyInfoInputs.cache
+D:\FINAL LTHT\obj\Debug\net10.0\FINAL LTHT.AssemblyInfo.cs
+D:\FINAL LTHT\obj\Debug\net10.0\FINAL LTHT.csproj.CoreCompileInputs.cache
+D:\FINAL LTHT\obj\Debug\net10.0\FINAL LTHT.dll
+D:\FINAL LTHT\obj\Debug\net10.0\refint\FINAL LTHT.dll
+D:\FINAL LTHT\obj\Debug\net10.0\FINAL LTHT.pdb
+D:\FINAL LTHT\obj\Debug\net10.0\FINAL LTHT.genruntimeconfig.cache
+D:\FINAL LTHT\obj\Debug\net10.0\ref\FINAL LTHT.dll

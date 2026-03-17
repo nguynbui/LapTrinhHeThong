@@ -37,7 +37,6 @@ namespace Services
         {
             get { lock (_lock) { return _entries.Count; } }
         }
-
         public bool IsProcessed(string fileName, string checksum)
         {
             lock (_lock)

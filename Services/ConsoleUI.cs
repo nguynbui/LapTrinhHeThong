@@ -78,7 +78,7 @@ namespace Services
             sb.AppendLine("KPI\t\t\tValue");
             sb.AppendLine("----------------------------------------");
             sb.AppendLine($"Total SKUs:\t\t{kpi.TotalSKUs}");
-            sb.AppendLine($"Cost of Inventory:\t${kpi.StockValue:0.00}");
+            sb.AppendLine($"Cost of Inventory:\t$ {kpi.StockValue:N2}");
             sb.AppendLine($"Out-of-Stock Items:\t{kpi.OutOfStockItems}");
             sb.AppendLine($"Average Daily Sales:\t{kpi.AverageDailySales:0.##}");
             sb.AppendLine($"Average Inventory Age (days):\t{kpi.AverageInventoryAgeDays:0.##}");
@@ -138,7 +138,7 @@ namespace Services
             report.AppendLine($"Generated: {DateTime.UtcNow:O}");
             report.AppendLine();
             report.AppendLine($"Total SKUs: {kpi.TotalSKUs}");
-            report.AppendLine($"Cost of Inventory: ${kpi.StockValue:0.00}");
+            report.AppendLine($"Cost of Inventory: $ {kpi.StockValue:N2}");
             report.AppendLine($"Out-of-Stock Items: {kpi.OutOfStockItems}");
             report.AppendLine($"Average Daily Sales: {kpi.AverageDailySales:0.##}");
             report.AppendLine($"Average Inventory Age (days): {kpi.AverageInventoryAgeDays:0.##}");

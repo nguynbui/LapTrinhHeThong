@@ -77,50 +77,68 @@ namespace Services
                 return;
             }
 
-            var text = await File.ReadAllTextAsync(path);
+            try
+            {
+                var text = await File.ReadAllTextAsync(path);
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-            // Heuristics: tên thư mục chỉ ra purchase hoặc invoice
-            var lower = path.ToLowerInvariant();
-            if (lower.Contains("purchase"))
-            {
-                var items = JsonSerializer.Deserialize<List<Models.PurchaseOrder>>(text, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                if (items != null)
-                {
-                    foreach (var po in items) _aggregates.ApplyPurchase(po);
-                }
-            }
-            else if (lower.Contains("invoice"))
-            {
-                var items = JsonSerializer.Deserialize<List<Models.Invoice>>(text, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                if (items != null)
-                {
-                    foreach (var inv in items) _aggregates.ApplyInvoice(inv);
-                }
-            }
-            else
-            {
-                // Nếu không rõ loại theo tên thư mục, cố gắng nhận diện từ nội dung JSON
-                using var doc = JsonDocument.Parse(text);
-                if (doc.RootElement.ValueKind == JsonValueKind.Array && doc.RootElement.GetArrayLength() > 0)
-                {
-                    var first = doc.RootElement[0];
-                    if (first.TryGetProperty("orderId", out _))
-                    {
-                        var items = JsonSerializer.Deserialize<List<Models.PurchaseOrder>>(text, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                        if (items != null) foreach (var po in items) _aggregates.ApplyPurchase(po);
-                    }
-                    else if (first.TryGetProperty("invoiceId", out _))
-                    {
-                        var items = JsonSerializer.Deserialize<List<Models.Invoice>>(text, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                        if (items != null) foreach (var inv in items) _aggregates.ApplyInvoice(inv);
-                    }
-                }
-            }
+                // Ép toàn bộ JSON vào cái khuôn XeroRoot
+                var rootData = JsonSerializer.Deserialize<XeroRoot>(text, options);
 
-            _registry.MarkProcessed(fileName, checksum);
-            var kpi = _aggregates.GetKPI();
-            _writer.Write(kpi);
-            Console.WriteLine($"Processed {fileName} and updated KPI.");
+                if (rootData != null && rootData.Invoices != null)
+                {
+                    foreach (var inv in rootData.Invoices)
+                    {
+                        // Lấy ngày tháng
+                        DateTime date = DateTime.UtcNow;
+                        if (DateTime.TryParse(inv.DateString, out var parsedDate)) date = parsedDate;
+
+                        if (inv.LineItems == null) continue;
+
+                        foreach (var line in inv.LineItems)
+                        {
+                            if (line.Quantity <= 0) continue;
+
+                            string productId = line.ItemCode;
+                            if (string.IsNullOrWhiteSpace(productId))
+                            {
+                                continue; // Đá văng ngay lập tức các dòng rác
+                            }
+
+                            if (inv.Type == "ACCPAY") // ACCPAY = Hóa đơn đầu vào (Mua hàng)
+                            {
+                                var po = new Models.PurchaseOrder
+                                {
+                                    ProductId = productId,
+                                    QuantityPurchased = (int)Math.Round(line.Quantity),
+                                    UnitCost = line.UnitAmount,
+                                    PurchaseDate = date
+                                };
+                                _aggregates.ApplyPurchase(po);
+                            }
+                            else if (inv.Type == "ACCREC") // ACCREC = Hóa đơn đầu ra (Bán hàng)
+                            {
+                                var invoice = new Models.Invoice
+                                {
+                                    ProductId = productId,
+                                    QuantitySold = (int)Math.Round(line.Quantity),
+                                    UnitSellingPrice = line.UnitAmount,
+                                    InvoiceDate = date
+                                };
+                                _aggregates.ApplyInvoice(invoice);
+                            }
+                        }
+                    }
+                }
+                _registry.MarkProcessed(fileName, checksum);
+                var kpi = _aggregates.GetKPI();
+                _writer.Write(kpi);
+                Console.WriteLine($"Processed {fileName} and updated KPI.");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("FileWorker Loop", "Unexpected error", ex);
+            }
         }
 
         public async Task StopAsync()

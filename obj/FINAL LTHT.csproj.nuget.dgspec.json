@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FINAL LTHT\\FINAL LTHT.csproj": {}
+    "C:\\Users\\ACER\\LẬP TRÌNH HỆ THỐNG\\CUOI KY\\LapTrinhHeThong\\FINAL LTHT.csproj": {}
   },
   "projects": {
-    "D:\\FINAL LTHT\\FINAL LTHT.csproj": {
+    "C:\\Users\\ACER\\LẬP TRÌNH HỆ THỐNG\\CUOI KY\\LapTrinhHeThong\\FINAL LTHT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FINAL LTHT\\FINAL LTHT.csproj",
+        "projectUniqueName": "C:\\Users\\ACER\\LẬP TRÌNH HỆ THỐNG\\CUOI KY\\LapTrinhHeThong\\FINAL LTHT.csproj",
         "projectName": "FINAL LTHT",
-        "projectPath": "D:\\FINAL LTHT\\FINAL LTHT.csproj",
-        "packagesPath": "C:\\Users\\boytm\\.nuget\\packages\\",
-        "outputPath": "D:\\FINAL LTHT\\obj\\",
+        "projectPath": "C:\\Users\\ACER\\LẬP TRÌNH HỆ THỐNG\\CUOI KY\\LapTrinhHeThong\\FINAL LTHT.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\LẬP TRÌNH HỆ THỐNG\\CUOI KY\\LapTrinhHeThong\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\boytm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,8 +39,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -61,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

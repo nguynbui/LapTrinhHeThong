@@ -24,7 +24,7 @@ namespace Services
                     list = new List<Lot>();
                     _lots[po.ProductId] = list;
                 }
-                list.Add(new Lot { Quantity = po.Quantity, UnitCost = po.UnitCost, PurchaseDate = po.PurchaseDate.Date });
+                list.Add(new Lot { Quantity = po.QuantityPurchased, UnitCost = po.UnitCost, PurchaseDate = po.PurchaseDate.Date });
             }
         }
 
@@ -39,7 +39,7 @@ namespace Services
                     _lots.TryAdd(inv.ProductId, new List<Lot>());
                 }
 
-                var remaining = inv.Quantity;
+                var remaining = inv.QuantitySold;
                 if (_lots.TryGetValue(inv.ProductId, out list))
                 {
                     // FIFO: tiêu thụ lô cũ nhất trước
@@ -72,7 +72,7 @@ namespace Services
 
                 var day = inv.InvoiceDate.Date;
                 if (!_dailySales.ContainsKey(day)) _dailySales[day] = 0;
-                _dailySales[day] += inv.Quantity;
+                _dailySales[day] += inv.QuantitySold;
             }
         }
 

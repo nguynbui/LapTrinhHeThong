@@ -12,3 +12,18 @@ D:\FINAL LTHT\obj\Debug\net8.0\refint\FINAL LTHT.dll
 D:\FINAL LTHT\obj\Debug\net8.0\FINAL LTHT.pdb
 D:\FINAL LTHT\obj\Debug\net8.0\FINAL LTHT.genruntimeconfig.cache
 D:\FINAL LTHT\obj\Debug\net8.0\ref\FINAL LTHT.dll
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\bin\Debug\net8.0\FINAL LTHT.exe
+C:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\bin\Debug\net8.0\FINAL LTHT.deps.json
+C:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\bin\Debug\net8.0\FINAL LTHT.runtimeconfig.json
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\bin\Debug\net8.0\FINAL LTHT.dll
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\bin\Debug\net8.0\FINAL LTHT.pdb
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.AssemblyInfoInputs.cache
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.AssemblyInfo.cs
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.csproj.CoreCompileInputs.cache
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.sourcelink.json
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.dll
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\refint\FINAL LTHT.dll
+c:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.pdb
+C:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\FINAL LTHT.genruntimeconfig.cache
+C:\Users\ACER\LẬP TRÌNH HỆ THỐNG\CUOI KY\LapTrinhHeThong\obj\Debug\net8.0\ref\FINAL LTHT.dll
